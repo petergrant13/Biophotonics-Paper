@@ -55,10 +55,26 @@
              
         Department of Electrical and Computer Engineering\\
         University of Victoria\\
-        TODO, 2024
+        April 8, 2024
              
     \end{center}
 \end{titlepage}
+
+
+\tableofcontents
+\newpage
+
+\addcontentsline{toc}{section}{Theory}
+\section*{Theory}
+
+\addcontentsline{toc}{subsection}{The Ray Optics Model}
+\subsection*{The Ray Optics Model}
+
+TODO
+
+
+\addcontentsline{toc}{subsection}{The Electric Dipole Model}
+\subsection*{The Electric Dipole Model}
 
 \[ \mathbf{F} = (\mathbf{p}\ \cdot\mathbf{\nabla})\mathbf{E} + \frac{d\mathbf{p}}{dt}\times\mathbf{B} \]
 
@@ -66,18 +82,53 @@
 \[ \mathbf{F} = \alpha\left[ (\mathbf{E}\cdot\mathbf{\nabla})\mathbf{E} + \frac{d\mathbf{E}}{dt}\times\mathbf{B} \right]  \]
 \[ \mathbf{F} = \alpha\left[ \frac{1}{2}\mathbf{\nabla}\mathbf{E}^2 + \frac{d}{dt}(\mathbf{E}\times\mathbf{B}) \right]  \]
 
+\[ \mathbf{F} = \frac{1}{2}\alpha\nabla E^2 \]
+
+\[ \mathbf{F}_\text{scat}(\mathbf{r}) = \frac{k^4\alpha^2}{6\pi cn^3\varepsilon_0^2}\mathbf{I}(\mathbf{r})\hat{z} = \frac{8\pi n_0k^4a^6}{3c}\left( \frac{m^2-1}{m^2+2} \right)^2\mathbf{I}(\mathbf{r})\hat{z}  \]
+
+\addcontentsline{toc}{subsection}{Harmonic Potential Approximation}
+\subsection*{Harmonic Potential Approximation}
+
+\[ \mathbf{\nabla E}_\text{AC Stark} = \frac{3\pi c^2\Gamma\mu}{2\omega_0^3\delta}\mathbf{I(r,z)}  \]
+
+\[ I(r,z) = I_0 \left( \frac{\omega_0}{\omega(z)} \right)^2\ e^{\displaystyle -\frac{2r^2}{\omega^2(z)}}  \]
+
+\[ \omega(z) = \omega_0 \sqrt{1 + \left( \frac{z}{Z_R} \right)^2} \]
+
+\[ Z_R = \frac{\pi\omega_0^2}{\lambda}  \]
+
+\[ P_0 = \frac{1}{2} \pi I_0\omega_0^2 \]
+
+\[ \frac{1}{2!}\frac{\p^2I}{\p z^2} \Bigg\vert_{r,z=0} z^2 = \frac{2P_0\lambda^2}{\pi^3\omega_0^6}z^2 = \frac{1}{2}m\omega_z^2z^2  \]
+
+\[ \frac{1}{2!}\frac{\p^2I}{\p r^2} \Bigg\vert_{r,z=0} r^2 = \frac{4P_0}{\pi\omega_0^4}r^2 = \frac{1}{2}m\omega_r^2r^2  \]
+
+\[ \omega_r = \sqrt{\frac{8P_0}{\pi m\omega_0^4}} \]
+\[ \omega_z = \sqrt{\frac{4P_0\lambda^2}{m\pi^3\omega_0^6}} \]
+\[ \frac{\omega_r}{\omega_z} = \sqrt{2}\frac{\omega_0\pi}{\lambda}  \]
+
+
+
 Want to go over time dependent perturbation theory
+
 
 Then add sinusoidal perturbations
 
+
 Then derive Einstein's A and B coeffs
 
+
 Ultimately get Fermi's golden rule and lasers
+
+\addcontentsline{toc}{section}{Applications}
+\section*{Applications}
 
 
 \newpage
 \section*{References}
 
 % https://www.physics.utoronto.ca/apl/opt/opt.pdf
+
+
 
 \end{document}

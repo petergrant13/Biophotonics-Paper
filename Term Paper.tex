@@ -9,6 +9,11 @@
 \usepackage{graphicx}
 \usepackage{tikz}
 \usepackage{pgfplots}
+\usepackage{siunitx}
+\usepackage{filecontents}
+\usepackage{cite}
+\usepackage{hyperref}
+\usepackage{titlesec}
 \pgfplotsset{width=15cm,compat=1.9}
 
 \newcommand{\R}{\mathbb{R}}
@@ -64,8 +69,88 @@
 \tableofcontents
 \newpage
 
-\addcontentsline{toc}{section}{Theory}
-\section*{Theory}
+\addcontentsline{toc}{section}{Introduction}
+\section*{Introduction}
+
+TODO
+
+\addcontentsline{toc}{section}{Theory of Lasers}
+\section*{Theory of Lasers}
+
+TODO
+
+\addcontentsline{toc}{subsection}{Light-Matter Interactions}
+\subsection*{Light-Matter Interactions}
+
+TODO
+
+\addcontentsline{toc}{subsection}{Perturbation Theory}
+\subsection*{Perturbation Theory}
+
+There are only a handful of potentials for which the Schr\"odinger equation can be solved exactly. For the vast majority of potentials, we must resort to perturbation theory. The idea is to start with a simple potential for which the Schr\"odinger equation can be solved exactly, and then add a small perturbation to the potential. The Schr\"odinger equation can then be solved iteratively, with each term in the series representing a higher order correction to the wavefunction. 
+
+In general, time-independent perturbation theory is used when the Hamiltonian can be written as the sum of two terms, $\H = \H^0 + \H'$, where $\H^0$ is the Hamiltonian for a system for which the Schr\"odinger equation can be solved exactly, and $\H'$ is a small perturbation.
+
+For lasers, time-dependent perturbation theory is necessary. For example, the perturbation could be a sinusoidal electric field, which is used to model the interaction between light and matter. For time-dependent perturbation theory of a two-level system with two states that are eigenstates of the unperturbed Hamiltonian,
+
+\[ \hat{\H}^0\psi_a = E_a\psi_a,\quad \hat{\H}^0\psi_b = E_b\psi_b \]
+
+The time evolution of the system is thus 
+\[ \Psi(t) = c_a\psi_ae^{-iE_at/\hbar} + c_b\psi_be^{-iE_bt/\hbar} \]
+
+Then, the perturbation is "turned on". The result is that the coefficients now depend on time 
+\[ \Psi(t) = c_a(t)\psi_ae^{-iE_at/\hbar} + c_b(t)\psi_be^{-iE_bt/\hbar} \]
+
+The desired quantities are $c_a(t)$ and $c_b(t)$. These can be found by solving the time-dependent Schr\"odinger equation with the perturbed Hamiltonian. 
+\[ \hat{\H}\Psi = i\hbar\frac{\p\Psi}{\p t},\ \hat{\H} = \hat{\H}^0 + \hat{\H}'(t) \]
+
+Solving this equation is not trivial, and is certainly beyond the scope of this paper. Please refer to the references for more information. However, because the states are orthogonal, the trick of taking the inner product of each state can be used. The essential result is 
+\begin{equation}
+     \dot{c}_a = -\frac{i}{\hbar}\H'_{ab}e^{-i\omega_0t}c_b,\quad \dot{c}_b = -\frac{i}{\hbar}\H'_{ba}e^{i\omega_0t}c_a 
+\end{equation}
+
+Where 
+\[ \omega_0 \equiv \frac{E_b - E_a}{\hbar} \]
+
+So, this says that the probability of transitioning from state $a$ to state $b$ is proportional to the matrix element of the perturbation between the two states.
+
+Thus far, the coefficients c are exact. However, to calculate them exactly requires infinitely higher order perturbations. Generally, the first order perturbation is sufficient, and will be examined for the rest of the paper.
+
+\addcontentsline{toc}{subsection}{Sinusoidal Perturbations}
+\subsection*{Sinusoidal Perturbations}
+
+Since electromagnetic radiation is sinusoidal, it is extremely useful to look at sinusoidal perturbations. Consider the Hamiltonian
+\[ \hat{\H}'(\vec{r},t) = V(\vec{r})\cos(\omega t) \]
+
+This will have matrix element 
+\[ \H'_{ab} = V_{ab}\cos(\omega t) \]
+
+Where 
+\[ V_{ab} = \braket{\psi_a|V(\vec{r})|\psi_b} \]
+
+Plugging this result into (1) gives
+\[ c_b(t) \approx -\frac{i}{\hbar}V_{ba}\int_0^tdt'\ \cos(\omega t')e^{i\omega_0t''}  \]
+\[ = -\frac{V_{ba}}{2\hbar}\left[ \frac{e^{i(\omega_0+\omega)t}-1}{\omega_0+\omega} + \frac{e^{i(\omega_0+\omega)t}-1}{\omega_0-\omega} \right] \]
+
+It is obvious that for frequencies far from the resonance frequency, the transition probability will be quite small. So, it is useful to only look at frequencies close to the resonant frequencies, and neglect the first term. This means that the transition probability for a sinusoidal perturbation is given by 
+\[ P_{a\to b}(t) = |c_b(t)|^2 \approx \frac{|V_{ab}|^2}{\hbar}\frac{\sin^2\left[(\omega_0-\omega)t/2\right]}{(\omega_0-\omega)^2} \]
+
+So, the incident electromagnetic wave will need to have a frequency close to the resonant frequency in order to have a significant transition probability.
+
+Further theory would look at incoherent electromagnetic radiation from all directions, then use Boltzmann statistics and Planck's blackbody formula to derive Einstein's famous A and B coefficients to get the rates of transmissions. Then, one can get the lifetime and selection rules of the states, along with Fermi's golden rule to engineer the laser.
+
+
+\addcontentsline{toc}{subsection}{Einstein's A and B Coefficients}
+\subsection*{Einstein's A and B Coefficients}
+Then derive Einstein's A and B coeffs
+
+
+
+
+
+\addcontentsline{toc}{section}{Theory of Laser Tweezers}
+\section*{Theory of Laser Tweezers}
+
 
 \addcontentsline{toc}{subsection}{The Ray Optics Model}
 \subsection*{The Ray Optics Model}
@@ -109,23 +194,16 @@ TODO
 
 
 
-Want to go over time dependent perturbation theory
 
-
-Then add sinusoidal perturbations
-
-
-Then derive Einstein's A and B coeffs
-
-
-Ultimately get Fermi's golden rule and lasers
 
 \addcontentsline{toc}{section}{Applications}
 \section*{Applications}
 
+\cite{DoS}
 
 \newpage
-\section*{References}
+\bibliography{Term_Paper}
+\bibliographystyle{ieeetr}
 
 % https://www.physics.utoronto.ca/apl/opt/opt.pdf
 % https://home.uni-leipzig.de/pwm/web/?section=introduction&page=opticaltraps

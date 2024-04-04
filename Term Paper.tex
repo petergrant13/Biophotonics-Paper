@@ -169,10 +169,15 @@ For small objects, the ray optics model no longer works. So, more theory is requ
 
 Here, $\mathbf{p}$ is the dipole moment of the object, $\mathbf{E}$ is the electric field, and $\mathbf{B}$ is the magnetic field. The first term is the force due to the electric field, and the second term is the force due to the magnetic field.
 
+Through the use of polarizability, $\alpha$, the dipole can be eliminated.
+
 \[ \mathbf{F} = \alpha\left[ (\mathbf{E}\cdot\mathbf{\nabla})\mathbf{E} + \frac{d\mathbf{E}}{dt}\times\mathbf{B} \right]  \]
 \[ \mathbf{F} = \alpha\left[ \frac{1}{2}\mathbf{\nabla}\mathbf{E}^2 + \frac{d}{dt}(\mathbf{E}\times\mathbf{B}) \right]  \]
 
+Then, the term on the right is the time derivative of the Poynting vector. For a CW laser, this term is simply zero
 \[ \mathbf{F} = \frac{1}{2}\alpha\nabla E^2 \]
+
+
 
 \[ \mathbf{F}_\text{scat}(\mathbf{r}) = \frac{k^4\alpha^2}{6\pi cn^3\varepsilon_0^2}\mathbf{I}(\mathbf{r})\hat{z} = \frac{8\pi n_0k^4a^6}{3c}\left( \frac{m^2-1}{m^2+2} \right)^2\mathbf{I}(\mathbf{r})\hat{z}  \]
 
